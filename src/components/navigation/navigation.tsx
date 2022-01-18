@@ -9,8 +9,8 @@ import { Link } from "react-router-dom";
 
 const NavigationComp = (): JSX.Element => {
   const navItem = [
-    { name: "Bikes", link: "/bikes", id: 1 },
-    { name: "Riders", link: "/riders", id: 2 },
+    { name: "Bikes", link: "/shop", id: 1 },
+    { name: "Riders", link: "/shop", id: 2 },
     { name: "Shop", link: "/shop", id: 3 },
   ];
 
@@ -24,7 +24,9 @@ const NavigationComp = (): JSX.Element => {
       color="#7E7E7E"
     >
       <Flex alignItems="center">
-        <Image cursor="pointer" w="80px" src={logo} />
+        <Link to="/">
+          <Image cursor="pointer" w="80px" src={logo} />
+        </Link>
         {navItem.map((item) => {
           return (
             <Link to={item.link} key={item.id}>

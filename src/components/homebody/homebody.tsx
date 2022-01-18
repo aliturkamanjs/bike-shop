@@ -1,11 +1,13 @@
 import { Button } from "@chakra-ui/button";
 import { Image } from "@chakra-ui/image";
 import { Center, Container, Flex, Text } from "@chakra-ui/layout";
+import { products } from "../../data/data";
 import { Link } from "react-router-dom";
 import ButtonComp from "../../common/buttonComp";
 import Card from "../../common/card";
-import { products } from "../../data/data";
 import mapIcon from "../../svg/map.svg";
+import goldenCup from "../../svg/goldenCup.svg";
+import bikerIcon from "../../svg/bikerIcon.svg";
 
 const HomeBody = (): JSX.Element => {
   const componyItems = [
@@ -16,6 +18,27 @@ const HomeBody = (): JSX.Element => {
     { name: "mavic", id: 5 },
     { name: "santa cruz", id: 6 },
     { name: "fox", id: 7 },
+  ];
+
+  const blogItems = [
+    {
+      title: "become champion",
+      desc: "The passage experienced a surge in popularity during the 1960s when Letraset used it on  sheets,",
+      icon: mapIcon,
+      id: 1,
+    },
+    {
+      title: "long distance",
+      desc: "laying out pages with meaningless filler text can be very useful when  Letraset used it onthe , not content.",
+      icon: goldenCup,
+      id: 2,
+    },
+    {
+      title: "bike rider",
+      desc: "From its medieval origins to the digital era, learn everything there is to know about the  lorem ipsum passage.",
+      icon: bikerIcon,
+      id: 3,
+    },
   ];
 
   return (
@@ -39,9 +62,9 @@ const HomeBody = (): JSX.Element => {
         New Bikes
       </Text>
       <Flex justifyContent="space-between">
-        {products.map((product) => {
+        {products.slice(products.length - 2).map((product) => {
           return (
-            <Card flexDir="column" p="0" rounded="22px" w="365px" h="365px">
+            <Card key={product.id} flexDir="column" p="0" rounded="22px" w="365px" h="365px">
               <Flex
                 w="full"
                 h="236px"
@@ -51,17 +74,19 @@ const HomeBody = (): JSX.Element => {
                 justifyContent="center"
                 alignItems="center"
               >
-                <Image objectFit="cover" src={product.image} />
+                <Image w="270px" objectFit="cover" src={product.image} />
               </Flex>
               <Flex p="4" justifyContent="space-between">
+                <Link to={{ pathname: `/bike/${product.id}`, state:  product  }}>
                 <Flex flexDir="column">
                   <Text fontWeight="700" fontSize="23px">
                     {product.name}
                   </Text>
-                  <Text fontSize="13px" mt="-2px" color="#7E7E7E">
+                  <Text fontSize="13px" mt="-2px" color="#7E7E7E" w="230px" overflow="hidden" whiteSpace="nowrap" textOverflow="ellipsis">
                     {product.desc}
                   </Text>
                 </Flex>
+                </Link>
                 <Text>{product.price}</Text>
               </Flex>
               <ButtonComp>Buy Now</ButtonComp>
@@ -81,7 +106,7 @@ const HomeBody = (): JSX.Element => {
           <Text color="#7E7E7E" fontSize="15px" mt="-1">
             Explore more of trending bikes
           </Text>
-          <Link to="/store">
+          <Link to="/shop">
             <Button
               _focus={{}}
               _active={{ bg: "#494949" }}
@@ -112,27 +137,47 @@ const HomeBody = (): JSX.Element => {
           we’ve got everything you need to start biker
         </Text>
       </Flex>
-      <Flex>
-        <Card
-          w="323px"
-          h="355px"
-          rounded="23px"
-          display="flex"
-          flexDir="column"
-          alignItems="center"
-        >
-          <Center h="130px">
-            <Image src={mapIcon} />
-          </Center>
-          <Text fontSize="25px" fontWeight="500">
-            long distance
-          </Text>
-          <Text color="#7E7E7E" fontSize="14px" textAlign="center">
-            The passage experienced a surge in popularity during the 1960s when
-            Letraset used it on sheets,
-          </Text>
-          <Button variant="outline">learn more</Button>
-        </Card>
+
+      <Flex mt="50px" w="full" justifyContent="space-between">
+        {blogItems.map((item) => {
+          return (
+            <Card
+              w="323px"
+              h="335px"
+              rounded="23px"
+              display="flex"
+              flexDir="column"
+              justifyContent="space-between"
+              alignItems="center"
+              shadow="sm"
+              key={item.id}
+            >
+              <Flex flexDir="column" alignItems="center">
+                <Center h="130px">
+                  <Image w="95px" src={item.icon} />
+                </Center>
+                <Text fontSize="25px" fontWeight="500">
+                  {item.title}
+                </Text>
+                <Text color="#7E7E7E" fontSize="14px" textAlign="center">
+                  {item.desc}
+                </Text>
+              </Flex>
+              <Button
+                w="130px"
+                h="33px"
+                rounded="6px"
+                border="1px solid"
+                borderColor="#151515"
+                fontSize="15px"
+                variant="outline"
+                _focus={{}}
+              >
+                learn more
+              </Button>
+            </Card>
+          );
+        })}
       </Flex>
     </Container>
   );
