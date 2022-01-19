@@ -3,7 +3,6 @@ import { Image } from "@chakra-ui/image";
 import { Center, Container, Flex, Text } from "@chakra-ui/layout";
 import { products } from "../../data/data";
 import { Link } from "react-router-dom";
-import ButtonComp from "../../common/buttonComp";
 import Card from "../../common/card";
 import mapIcon from "../../svg/map.svg";
 import goldenCup from "../../svg/goldenCup.svg";
@@ -89,7 +88,19 @@ const HomeBody = (): JSX.Element => {
                 </Link>
                 <Text>{product.price}</Text>
               </Flex>
-              <ButtonComp>Buy Now</ButtonComp>
+              <Button
+                  fontSize="14px"
+                  border="1px solid"
+                  borderColor="#191919"
+                  rounded="8"
+                  _focus={{}}
+                  _hover={{}}
+                  h="30px"
+                  w="full"
+                  variant="outline"
+                >
+                  Buy Now
+                </Button>
             </Card>
           );
         })}

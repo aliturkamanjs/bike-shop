@@ -10,7 +10,6 @@ import freeShipping from "../svg/freeShipping.svg";
 import box from "../svg/box.svg";
 import Layout from "../layout/layout";
 import startIcon from "../svg/start.svg";
-import HomePage from "./home";
 
 // interface ProductProps {
 //   name: string;
@@ -23,7 +22,6 @@ import HomePage from "./home";
 
 const BikeDetail = (history: any): JSX.Element => {
   const { state } = history.location;
-
 
 
   return (

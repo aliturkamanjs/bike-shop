@@ -8,7 +8,7 @@ import trek from "../images/trek.png";
 export const products = [
   {
     name: "shimano",
-    price: "$ 310",
+    price: 310,
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     bg: "#D3E0EA",
     image: shimano,
@@ -16,7 +16,7 @@ export const products = [
   },
   {
     name: "mavic",
-    price: "$ 249",
+    price: 249,
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     bg: "#F1C6E7",
     image: mavic,
@@ -24,7 +24,7 @@ export const products = [
   },
   {
     name: "silverback",
-    price: "$ 435",
+    price: 435,
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     bg: "#D8E9A8",
     image: silverback,
@@ -32,7 +32,7 @@ export const products = [
   },
   {
     name: "santa cruz",
-    price: "$ 534",
+    price: 534,
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     bg: "#FFE578",
     image: santa,
@@ -40,7 +40,7 @@ export const products = [
   },
   {
     name: "surly",
-    price: "$ 299",
+    price: 299,
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     bg: "#C6FFC1",
     image: silverback,
@@ -48,7 +48,7 @@ export const products = [
   },
   {
     name: "fox",
-    price: "$ 435",
+    price: 435,
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     bg: "#AAD8D3",
     image: fox,
@@ -56,7 +56,7 @@ export const products = [
   },
   {
     name: "trek",
-    price: "$ 534",
+    price: 534,
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     bg: "#A6F6F1",
     image: trek,
@@ -64,7 +64,7 @@ export const products = [
   },
   {
     name: "silverback",
-    price: "$ 299",
+    price: 299,
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     bg: "#EDFFEC",
     image: shimano,
@@ -72,7 +72,7 @@ export const products = [
   },
   {
     name: "mavic",
-    price: "$ 435",
+    price: 435,
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     bg: "#F5F5C6",
     image: mavic,

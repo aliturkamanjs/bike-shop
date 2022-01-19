@@ -45,7 +45,9 @@ const NavigationComp = (): JSX.Element => {
 
       <Flex>
         <Image cursor="pointer" mr="3" w="21px" src={search} />
+        <Link to="/cart">
         <Image cursor="pointer" w="21px" src={cart} />
+        </Link>
 
         <Button
           ml="4"
