@@ -66,6 +66,7 @@ const ShopPage = (): JSX.Element => {
                   alignItems="center"
                   bg={product.bg}
                 >
+                  
                   <Image w="270px" objectFit="cover" src={product.image} />
                 </Flex>
                 <Link to={{ pathname: `/bike/${product.id}`, state: product }}>

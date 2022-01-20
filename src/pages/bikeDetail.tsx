@@ -10,6 +10,7 @@ import freeShipping from "../svg/freeShipping.svg";
 import box from "../svg/box.svg";
 import Layout from "../layout/layout";
 import startIcon from "../svg/start.svg";
+import { useCartAction } from "../providers/cartProvider";
 
 // interface ProductProps {
 //   name: string;
@@ -20,8 +21,14 @@ import startIcon from "../svg/start.svg";
 //   id: number;
 // }
 
+
 const BikeDetail = (history: any): JSX.Element => {
   const { state } = history.location;
+  const dispatch = useCartAction()
+
+  const addToCart = (state : any) => {
+    dispatch({type: "ADD_TO_CART", payload: state})
+  }
 
 
   return (
@@ -37,7 +44,7 @@ const BikeDetail = (history: any): JSX.Element => {
                 </Text>
                 <Image mt="80px" w="180px" src={startIcon} />
                 <Text mt="2" mb="5">
-                  {state.price}
+                  $ {state.price}
                 </Text>
                 <Button
                   fontSize="14px"
@@ -49,6 +56,7 @@ const BikeDetail = (history: any): JSX.Element => {
                   h="30px"
                   w="full"
                   variant="outline"
+                  onClick={()=> addToCart(state)}
                 >
                   Buy Now
                 </Button>

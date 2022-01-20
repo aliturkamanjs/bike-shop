@@ -7,8 +7,15 @@ import Card from "../../common/card";
 import mapIcon from "../../svg/map.svg";
 import goldenCup from "../../svg/goldenCup.svg";
 import bikerIcon from "../../svg/bikerIcon.svg";
+import { useCartAction } from "../../providers/cartProvider";
 
 const HomeBody = (): JSX.Element => {
+  const dispatch = useCartAction()
+
+  const addToCart = (product : any) => {
+    dispatch({type: "ADD_TO_CART", payload: product})
+  }
+
   const componyItems = [
     { name: "silverback", id: 1 },
     { name: "surly", id: 2 },
@@ -98,6 +105,7 @@ const HomeBody = (): JSX.Element => {
                   h="30px"
                   w="full"
                   variant="outline"
+                  onClick={()=> addToCart(product)}
                 >
                   Buy Now
                 </Button>

@@ -13,6 +13,8 @@ export const products = [
     bg: "#D3E0EA",
     image: shimano,
     id: 1,
+    size: 38,
+    color: "white",
   },
   {
     name: "mavic",
@@ -21,6 +23,8 @@ export const products = [
     bg: "#F1C6E7",
     image: mavic,
     id: 2,
+    size: 38,
+    color: "white",
   },
   {
     name: "silverback",
@@ -29,6 +33,8 @@ export const products = [
     bg: "#D8E9A8",
     image: silverback,
     id: 3,
+    size: 38,
+    color: "white",
   },
   {
     name: "santa cruz",
@@ -37,6 +43,8 @@ export const products = [
     bg: "#FFE578",
     image: santa,
     id: 4,
+    size: 38,
+    color: "white",
   },
   {
     name: "surly",
@@ -45,6 +53,8 @@ export const products = [
     bg: "#C6FFC1",
     image: silverback,
     id: 5,
+    size: 38,
+    color: "white",
   },
   {
     name: "fox",
@@ -53,6 +63,8 @@ export const products = [
     bg: "#AAD8D3",
     image: fox,
     id: 6,
+    size: 38,
+    color: "white",
   },
   {
     name: "trek",
@@ -61,6 +73,8 @@ export const products = [
     bg: "#A6F6F1",
     image: trek,
     id: 7,
+    size: 38,
+    color: "white",
   },
   {
     name: "silverback",
@@ -69,6 +83,8 @@ export const products = [
     bg: "#EDFFEC",
     image: shimano,
     id: 8,
+    size: 38,
+    color: "white",
   },
   {
     name: "mavic",
@@ -77,5 +93,7 @@ export const products = [
     bg: "#F5F5C6",
     image: mavic,
     id: 9,
+    size: 38,
+    color: "white",
   },
 ];
