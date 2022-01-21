@@ -43,17 +43,6 @@ const decProduct = (state: any, action: any) => {
   }
 };
 
-const removeProduct = (state: any, action: any) => {
-  const updatedcart = [...state.cart];
-  const filterdCart = updatedcart.filter(
-    (item) => item.id !== action.payload.id
-  );
-  return {
-    ...state,
-    cart: filterdCart,
-    total: state.total - action.payload.offPrice,
-  };
-};
 
 const CartReducer = (state: any, action: any) => {
   switch (action.type) {
@@ -61,8 +50,7 @@ const CartReducer = (state: any, action: any) => {
       return addToCart(state, action);
     case "DEC_PRODUCT":
       return decProduct(state, action);
-    case "REMOVE_PRODUCT":
-      return removeProduct(state, action);
+
     default:
       return state;
   }

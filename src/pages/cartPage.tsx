@@ -1,12 +1,14 @@
+import { Button } from "@chakra-ui/button";
 import { Image } from "@chakra-ui/image";
-import { Container, Flex, Text } from "@chakra-ui/layout";
+import { Container, Divider, Flex, Text } from "@chakra-ui/layout";
+import Card from "../common/card";
 import Layout from "../layout/layout";
 import { useCart, useCartAction } from "../providers/cartProvider";
-import removeSvg from "../svg/remove.svg";
 
 const CartPage = (): JSX.Element => {
   const { cart } = useCart();
   const dispatch = useCartAction();
+
 
   const handleInc = (cartItem: any) => {
     dispatch({ type: "ADD_TO_CART", payload: cartItem });
@@ -14,10 +16,6 @@ const CartPage = (): JSX.Element => {
 
   const handleDec = (cartItem: any) => {
     dispatch({ type: "DEC_PRODUCT", payload: cartItem });
-  };
-
-  const removeProduct = (cartItem: any) => {
-    dispatch({ type: "REMOVE_PRODUCT", payload: cartItem });
   };
 
   return (
@@ -36,7 +34,7 @@ const CartPage = (): JSX.Element => {
                       mt="10"
                       bg="#f8fafd"
                       rounded="14px"
-                      w="1000px"
+                      w="900px"
                       h="170px"
                     >
                       <Flex
@@ -83,7 +81,7 @@ const CartPage = (): JSX.Element => {
                           alignItems="flex-end"
                           justifyContent="space-between"
                         >
-                          <Text>$ {c.price}</Text>
+                          <Text>$ {c.price * c.qty}</Text>
                           <Flex alignItems="center">
                             <Flex
                               justifyContent="space-between"
@@ -124,13 +122,6 @@ const CartPage = (): JSX.Element => {
                                 </Text>
                               </Flex>
                             </Flex>
-                            <Image
-                              cursor="pointer"
-                              ml="8"
-                              w="16px"
-                              src={removeSvg}
-                              onClick={() => removeProduct(c)}
-                            />
                           </Flex>
                         </Flex>
                       </Flex>
@@ -140,9 +131,7 @@ const CartPage = (): JSX.Element => {
               : "not"}
           </Flex>
 
-          <Flex display={cart.length ? "flex" : "none"}>
-            this is cart summer
-          </Flex>
+          <CartSummery />
         </Flex>
       </Container>
     </Layout>
@@ -150,3 +139,58 @@ const CartPage = (): JSX.Element => {
 };
 
 export default CartPage;
+
+export function CartSummery() {
+  const { cart, total } = useCart();
+
+  const totalPrice = cart.length
+    ? cart.reduce((acc: any, curr: any) => acc + curr.qty * curr.price, 0)
+    : 0;
+
+  return (
+    <Card
+      display={cart.length ? "flex" : "none"}
+      flexDir="column"
+      position="relative"
+      p="4"
+      mt="10"
+      bg="#f8fafd"
+      rounded="14px"
+      w="300px"
+      h="260px"
+    >
+      <Text fontSize="21px" fontWeight="500">
+        order summery
+      </Text>
+      <Divider mt="3" mb="3" borderColor="#E3E3E3" />
+      <Flex w="full" justifyContent="space-between" color="#4B4B4B">
+        <Text>original price</Text>
+        <Text>$ {totalPrice}</Text>
+      </Flex>
+      <Flex mt="3" w="full" justifyContent="space-between" color="#4B4B4B">
+        <Text>cart discount</Text>
+        <Text>$ {totalPrice - total}</Text>
+      </Flex>
+      <Divider mt="3" mb="3" borderColor="#E3E3E3" />
+      <Flex w="full" mb="3" justifyContent="space-between" color="#4B4B4B">
+        <Text>total</Text>
+        <Text>$ {total}</Text>
+      </Flex>
+      <Button
+        fontSize="14px"
+        border="1px solid"
+        borderColor="#191919"
+        rounded="8"
+        _focus={{}}
+        _hover={{}}
+        h="30px"
+        w="90%"
+        variant="outline"
+        position="absolute"
+        bottom="3"
+      >
+        Checkout
+      </Button>
+    </Card>
+  );
+}

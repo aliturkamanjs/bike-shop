@@ -1,5 +1,6 @@
 import { Button } from "@chakra-ui/button";
 import { Image } from "@chakra-ui/image";
+import { useCartAction } from "../../providers/cartProvider";
 import { Center, Container, Flex, Text } from "@chakra-ui/layout";
 import { products } from "../../data/data";
 import { Link } from "react-router-dom";
@@ -7,7 +8,6 @@ import Card from "../../common/card";
 import mapIcon from "../../svg/map.svg";
 import goldenCup from "../../svg/goldenCup.svg";
 import bikerIcon from "../../svg/bikerIcon.svg";
-import { useCartAction } from "../../providers/cartProvider";
 
 const HomeBody = (): JSX.Element => {
   const dispatch = useCartAction()
@@ -109,6 +109,7 @@ const HomeBody = (): JSX.Element => {
                 >
                   Buy Now
                 </Button>
+
             </Card>
           );
         })}
