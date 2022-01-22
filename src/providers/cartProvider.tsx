@@ -1,6 +1,12 @@
 import { createContext, ReactNode, useContext, useReducer } from "react";
 import CartReducer from "./cartReducer";
 
+
+interface cartType {
+  cart: [],
+  total: number,
+}
+
 const CartContext = createContext<any | null>(null);
 const CartContextDispatcher = createContext<any | null>(null);
 

@@ -1,6 +1,6 @@
 import { Button } from "@chakra-ui/button";
 import { Image } from "@chakra-ui/image";
-import { useCartAction } from "../../providers/cartProvider";
+import { useCart, useCartAction } from "../../providers/cartProvider";
 import { Center, Container, Flex, Text } from "@chakra-ui/layout";
 import { products } from "../../data/data";
 import { Link } from "react-router-dom";
@@ -8,11 +8,14 @@ import Card from "../../common/card";
 import mapIcon from "../../svg/map.svg";
 import goldenCup from "../../svg/goldenCup.svg";
 import bikerIcon from "../../svg/bikerIcon.svg";
+import { CheckInCart } from "../../utils/checkInCart";
+import { contextProps } from "../../utils/dataInterface";
 
 const HomeBody = (): JSX.Element => {
   const dispatch = useCartAction()
+  const {cart} = useCart()
 
-  const addToCart = (product : any) => {
+  const addToCart = (product : contextProps) => {
     dispatch({type: "ADD_TO_CART", payload: product})
   }
 
@@ -48,7 +51,7 @@ const HomeBody = (): JSX.Element => {
   ];
 
   return (
-    <Container minH="1800px" maxW="container.xl">
+    <Container  maxW="container.xl">
       <Center mt="10">
         <Text fontSize="18" fontWeight="600" color="#A6A6A6">
           Over 2.000 + trusted partner around the world
@@ -107,7 +110,7 @@ const HomeBody = (): JSX.Element => {
                   variant="outline"
                   onClick={()=> addToCart(product)}
                 >
-                  Buy Now
+                  {CheckInCart(cart, product) ? "In Cart" : "Buy Now"}
                 </Button>
 
             </Card>

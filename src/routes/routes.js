@@ -8,6 +8,7 @@ const routes = [
   { path: "/shop", component: ShopPage },
   { path: "/cart", component: CartPage },
   { path: "/", component: HomePage, exact: true },
+  { path: "", component: ShopPage },
 ];
 
 export default routes;

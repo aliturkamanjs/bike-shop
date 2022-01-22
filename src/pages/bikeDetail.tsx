@@ -10,7 +10,8 @@ import freeShipping from "../svg/freeShipping.svg";
 import box from "../svg/box.svg";
 import Layout from "../layout/layout";
 import startIcon from "../svg/start.svg";
-import { useCartAction } from "../providers/cartProvider";
+import { useCart, useCartAction } from "../providers/cartProvider";
+import { CheckInCart } from "../utils/checkInCart";
 
 // interface ProductProps {
 //   name: string;
@@ -24,6 +25,7 @@ import { useCartAction } from "../providers/cartProvider";
 
 const BikeDetail = (history: any): JSX.Element => {
   const { state } = history.location;
+  const {cart} = useCart()
   const dispatch = useCartAction()
 
   const addToCart = (state : any) => {
@@ -34,7 +36,7 @@ const BikeDetail = (history: any): JSX.Element => {
   return (
 
         <Layout>
-          <Container minH="1800px" maxW="container.xl">
+          <Container minH="72vh" maxW="container.xl">
             <Divider mt="6" mb="6" borderColor="#E3E3E3" />
             <Flex h="400px">
               <Flex flex={1} flexDir="column">
@@ -58,7 +60,7 @@ const BikeDetail = (history: any): JSX.Element => {
                   variant="outline"
                   onClick={()=> addToCart(state)}
                 >
-                  Buy Now
+                  {CheckInCart(cart, state) ? "In Cart" : "By Now"}
                 </Button>
                 <Divider mt="4" mb="4" borderColor="#E3E3E3" />
                 <Flex w="full" justifyContent="center">

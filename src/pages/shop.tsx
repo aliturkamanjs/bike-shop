@@ -12,18 +12,21 @@ import { Link } from "react-router-dom";
 import Card from "../common/card";
 import { products } from "../data/data";
 import Layout from "../layout/layout";
-import { useCartAction } from "../providers/cartProvider";
+import { useCartAction, useCart } from "../providers/cartProvider";
+import { CheckInCart } from "../utils/checkInCart";
+import { contextProps } from "../utils/dataInterface";
 
 const ShopPage = (): JSX.Element => {
   const dispatch = useCartAction();
+  const {cart} = useCart()
 
-  const addToCart = (product: any) => {
+  const addToCart = (product: contextProps) => {
     dispatch({ type: "ADD_TO_CART", payload: product });
   };
 
   return (
     <Layout>
-      <Container minH="1800px" maxW="container.xl">
+      <Container maxW="container.xl">
         <Flex mt="10" w="full" justifyContent="space-between">
           <Flex flexDir="column">
             <Text fontSize="35px" fontWeight="600" color="#191919">
@@ -103,7 +106,7 @@ const ShopPage = (): JSX.Element => {
                     variant="outline"
                     onClick={() => addToCart(product)}
                   >
-                    Buy Now
+                    {CheckInCart(cart, product) ? "In Cart" : "Buy Now"}
                   </Button>
                 </Center>
               </Card>

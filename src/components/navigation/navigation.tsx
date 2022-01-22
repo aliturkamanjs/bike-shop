@@ -1,20 +1,20 @@
 import { Flex } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/image";
-import { Badge, Text } from "@chakra-ui/layout";
+import { Text } from "@chakra-ui/layout";
 import { Button } from "@chakra-ui/button";
 import logo from "../../svg/logo.svg";
 import search from "../../svg/search.svg";
 import cartSvg from "../../svg/cart.svg";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useCart } from "../../providers/cartProvider";
 
 const NavigationComp = (): JSX.Element => {
   const { cart } = useCart();
 
   const navItem = [
-    { name: "Bikes", link: "/shop", id: 1 },
-    { name: "Riders", link: "/shop", id: 2 },
-    { name: "Shop", link: "/shop", id: 3 },
+    { name: "Shop", link: "/shop", id: 1 },
+    { name: "Cart", link: "/cart", id: 2 },
+    { name: "Home", link: "/", id: 3 },
   ];
 
   return (
@@ -32,7 +32,7 @@ const NavigationComp = (): JSX.Element => {
         </Link>
         {navItem.map((item) => {
           return (
-            <Link to={item.link} key={item.id}>
+            <NavLink exact activeStyle={{color: "#000000", fontWeight: "bold"}} to={item.link} key={item.id}>
               <Text
                 ml={item.name === "Bikes" ? "10" : "4"}
                 fontSize="17px"
@@ -41,17 +41,16 @@ const NavigationComp = (): JSX.Element => {
               >
                 {item.name}
               </Text>
-            </Link>
+            </NavLink>
           );
         })}
       </Flex>
 
       <Flex>
         <Image cursor="pointer" mr="3" w="26px" src={search} />
-        <Flex position="relative">
           <Link to="/cart">
+        <Flex position="relative">
             <Image cursor="pointer" w="26px" src={cartSvg} />
-          </Link>
           <Flex
             display={cart.length === 0 ? "none" : "flex"}
             rounded="50px"
@@ -65,12 +64,13 @@ const NavigationComp = (): JSX.Element => {
             alignItems="center"
             justifyContent="center"
             border="1px solid #f8fafd"
-          >
+            >
             <Text fontWeight="500" fontSize="13px">
               {cart.length}
             </Text>
           </Flex>
         </Flex>
+            </Link>
 
         <Button
           ml="4"
