@@ -12,9 +12,9 @@ const NavigationComp = (): JSX.Element => {
   const { cart } = useCart();
 
   const navItem = [
-    { name: "Shop", link: "/shop", id: 1 },
+    { name: "Home", link: "/", id: 1 },
+    { name: "Shop", link: "/shop", id: 3 },
     { name: "Cart", link: "/cart", id: 2 },
-    { name: "Home", link: "/", id: 3 },
   ];
 
   return (
@@ -32,8 +32,18 @@ const NavigationComp = (): JSX.Element => {
         </Link>
         {navItem.map((item) => {
           return (
-            <NavLink exact activeStyle={{color: "#000000", fontWeight: "bold"}} to={item.link} key={item.id}>
+            <NavLink
+              exact
+              activeStyle={{ color: "#000000", fontWeight: "bold" }}
+              to={item.link}
+              key={item.id}
+            >
               <Text
+                display={
+                  item.name === "Home"
+                    ? ["none", "none", "block", "block", "block"]
+                    : "block"
+                }
                 ml={item.name === "Bikes" ? "10" : "4"}
                 fontSize="17px"
                 cursor="pointer"
@@ -47,30 +57,36 @@ const NavigationComp = (): JSX.Element => {
       </Flex>
 
       <Flex>
-        <Image cursor="pointer" mr="3" w="26px" src={search} />
-          <Link to="/cart">
-        <Flex position="relative">
+        <Image
+          cursor="pointer"
+          mr="3"
+          w="26px"
+          src={search}
+          display={["none", "none", "block", "block", "block"]}
+        />
+        <Link to="/cart">
+          <Flex position="relative">
             <Image cursor="pointer" w="26px" src={cartSvg} />
-          <Flex
-            display={cart.length === 0 ? "none" : "flex"}
-            rounded="50px"
-            w="5"
-            h="5"
-            bg="#F05454"
-            color="#f8fafd"
-            top="-2"
-            right="-2"
-            position="absolute"
-            alignItems="center"
-            justifyContent="center"
-            border="1px solid #f8fafd"
+            <Flex
+              display={cart.length === 0 ? "none" : "flex"}
+              rounded="50px"
+              w="5"
+              h="5"
+              bg="#F05454"
+              color="#f8fafd"
+              top="-2"
+              right="-2"
+              position="absolute"
+              alignItems="center"
+              justifyContent="center"
+              border="1px solid #f8fafd"
             >
-            <Text fontWeight="500" fontSize="13px">
-              {cart.length}
-            </Text>
+              <Text fontWeight="500" fontSize="13px">
+                {cart.length}
+              </Text>
+            </Flex>
           </Flex>
-        </Flex>
-            </Link>
+        </Link>
 
         <Button
           ml="4"
@@ -83,6 +99,7 @@ const NavigationComp = (): JSX.Element => {
           _focus={{}}
           _hover={{}}
           _active={{}}
+          display={["none", "none", "block", "block", "block"]}
         >
           Sgin in/Sign up
         </Button>

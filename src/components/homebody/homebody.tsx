@@ -12,12 +12,12 @@ import { CheckInCart } from "../../utils/checkInCart";
 import { contextProps } from "../../utils/dataInterface";
 
 const HomeBody = (): JSX.Element => {
-  const dispatch = useCartAction()
-  const {cart} = useCart()
+  const dispatch = useCartAction();
+  const { cart } = useCart();
 
-  const addToCart = (product : contextProps) => {
-    dispatch({type: "ADD_TO_CART", payload: product})
-  }
+  const addToCart = (product: contextProps) => {
+    dispatch({ type: "ADD_TO_CART", payload: product });
+  };
 
   const componyItems = [
     { name: "silverback", id: 1 },
@@ -51,29 +51,60 @@ const HomeBody = (): JSX.Element => {
   ];
 
   return (
-    <Container  maxW="container.xl">
+    <Container maxW="container.xl">
       <Center mt="10">
-        <Text fontSize="18" fontWeight="600" color="#A6A6A6">
+        <Text
+          textAlign="center"
+          fontSize={["15px", "15px", "18px", "18px", "18px"]}
+          fontWeight="600"
+          color="#A6A6A6"
+        >
           Over 2.000 + trusted partner around the world
         </Text>
       </Center>
-      <Flex w="full" justifyContent="space-between" mt="10">
+      <Flex
+        w="full"
+        justifyContent="space-between"
+        alignItems="center"
+        flexDir={["column", "row", "row", "row", "row"]}
+        flexWrap="wrap"
+        mt="10"
+      >
         {componyItems.map((item) => {
           return (
-            <Text key={item.id} fontSize="19" fontWeight="700" color="#A6A6A6">
+            <Text
+              fontSize={["13px", "14px", "18px", "18px", "18px"]}
+              key={item.id}
+              fontWeight="700"
+              color="#A6A6A6"
+            >
               {item.name}
             </Text>
           );
         })}
       </Flex>
 
-      <Text mt="20" fontWeight="bold" fontSize="46px" mb="5" color="#191919">
+      <Text
+        mt="20"
+        fontWeight="bold"
+        fontSize={["30px", "36px", "46px", "46px", "46px"]}
+        mb="5"
+        color="#191919"
+      >
         New Bikes
       </Text>
-      <Flex justifyContent="space-between">
+      <Flex justifyContent={["center","center","space-between","space-between","space-between"]} flexWrap="wrap">
         {products.slice(products.length - 2).map((product) => {
           return (
-            <Card key={product.id} flexDir="column" p="0" rounded="22px" w="365px" h="365px">
+            <Card
+            mt="8"
+              key={product.id}
+              flexDir="column"
+              p="0"
+              rounded="22px"
+              w="365px"
+              h="365px"
+            >
               <Flex
                 w="full"
                 h="236px"
@@ -86,33 +117,40 @@ const HomeBody = (): JSX.Element => {
                 <Image w="270px" objectFit="cover" src={product.image} />
               </Flex>
               <Flex p="4" justifyContent="space-between">
-                <Link to={{ pathname: `/bike/${product.id}`, state:  product  }}>
-                <Flex flexDir="column">
-                  <Text fontWeight="700" fontSize="23px">
-                    {product.name}
-                  </Text>
-                  <Text fontSize="13px" mt="-2px" color="#7E7E7E" w="230px" overflow="hidden" whiteSpace="nowrap" textOverflow="ellipsis">
-                    {product.desc}
-                  </Text>
-                </Flex>
+                <Link to={{ pathname: `/bike/${product.id}`, state: product }}>
+                  <Flex flexDir="column">
+                    <Text fontWeight="700" fontSize="23px">
+                      {product.name}
+                    </Text>
+                    <Text
+                      fontSize="13px"
+                      mt="-2px"
+                      color="#7E7E7E"
+                      w="230px"
+                      overflow="hidden"
+                      whiteSpace="nowrap"
+                      textOverflow="ellipsis"
+                    >
+                      {product.desc}
+                    </Text>
+                  </Flex>
                 </Link>
                 <Text>{product.price}</Text>
               </Flex>
               <Button
-                  fontSize="14px"
-                  border="1px solid"
-                  borderColor="#191919"
-                  rounded="8"
-                  _focus={{}}
-                  _hover={{}}
-                  h="30px"
-                  w="full"
-                  variant="outline"
-                  onClick={()=> addToCart(product)}
-                >
-                  {CheckInCart(cart, product) ? "In Cart" : "Buy Now"}
-                </Button>
-
+                fontSize="14px"
+                border="1px solid"
+                borderColor="#191919"
+                rounded="8"
+                _focus={{}}
+                _hover={{}}
+                h="30px"
+                w="full"
+                variant="outline"
+                onClick={() => addToCart(product)}
+              >
+                {CheckInCart(cart, product) ? "In Cart" : "Buy Now"}
+              </Button>
             </Card>
           );
         })}
@@ -153,19 +191,37 @@ const HomeBody = (): JSX.Element => {
         alignItems="center"
         mt="120px"
       >
-        <Text fontWeight="bold" fontSize="41px" color="#191919">
+        <Text
+          textAlign="center"
+          fontWeight="bold"
+          fontSize={["30px", "36px", "41px", "41px", "41px"]}
+          color="#191919"
+        >
           become a biker in seconds
         </Text>
-        <Text mt="-1" fontSize="18px" fontWeight="500" color="#A6A6A6">
+        <Text
+          textAlign="center"
+          mt={["1", "1", "-1", "-1", "-1"]}
+          fontSize={["16px", "17px", "18px", "18px", "18px"]}
+          fontWeight="500"
+          color="#A6A6A6"
+        >
           we’ve got everything you need to start biker
         </Text>
       </Flex>
 
-      <Flex mt="50px" w="full" justifyContent="space-between">
+      <Flex
+        mt="50px"
+        w="full"
+        justifyContent="space-between"
+        alignItems="center"
+        flexDir={["column", "column", "column", "row", "row"]}
+      >
         {blogItems.map((item) => {
           return (
             <Card
-              w="323px"
+              mt="8"
+              w={["290px", "323px", "323px", "323px", "323px"]}
               h="335px"
               rounded="23px"
               display="flex"
