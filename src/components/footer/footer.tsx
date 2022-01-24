@@ -127,7 +127,12 @@ const FooterComp = (): JSX.Element => {
         >
           {items.map((item) => {
             return (
-              <Flex key={item.id} mt="8" ml={["20", "10", "0", "0", "0"]} flexDir="column">
+              <Flex
+                key={item.id}
+                mt="8"
+                ml={["20", "10", "0", "0", "0"]}
+                flexDir="column"
+              >
                 <Text fontSize="24px" fontWeight="700">
                   {item.title}
                 </Text>
@@ -163,9 +168,8 @@ const FooterComp = (): JSX.Element => {
           <Flex
             flexDir={["column-reverse", "column-reverse", "row", "row", "row"]}
             mt={["10", "10", "0", "0", "0"]}
-            
           >
-            <Flex  >
+            <Flex>
               <Link
                 _focus={{}}
                 isExternal
@@ -212,7 +216,7 @@ const FooterComp = (): JSX.Element => {
               </Link>
             </Flex>
 
-            <Flex  mb={["26px", "26px", "0", "0", "0"]}>
+            <Flex mb={["26px", "26px", "0", "0", "0"]}>
               <Text mr="1" color="#7E7E7E">
                 © 2022 created by
               </Text>

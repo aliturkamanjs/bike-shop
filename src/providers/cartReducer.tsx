@@ -43,7 +43,6 @@ const decProduct = (state: any, action: any) => {
   }
 };
 
-
 const CartReducer = (state: any, action: any) => {
   switch (action.type) {
     case "ADD_TO_CART":
@@ -57,3 +56,4 @@ const CartReducer = (state: any, action: any) => {
 };
 
 export default CartReducer;
+

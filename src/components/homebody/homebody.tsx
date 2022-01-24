@@ -73,7 +73,7 @@ const HomeBody = (): JSX.Element => {
         {componyItems.map((item) => {
           return (
             <Text
-            key={item.id}
+              key={item.id}
               fontSize={["13px", "14px", "18px", "18px", "18px"]}
               fontWeight="700"
               color="#A6A6A6"
@@ -146,20 +146,20 @@ const HomeBody = (): JSX.Element => {
                 <Text>{product.price}</Text>
               </Flex>
               <Center>
-              <Button
-                fontSize="14px"
-                border="1px solid"
-                borderColor="#191919"
-                rounded="8"
-                _focus={{}}
-                _hover={{}}
-                h="30px"
-                w="94%"
-                variant="outline"
-                onClick={() => addToCart(product)}
-              >
-                {CheckInCart(cart, product) ? "In Cart" : "Buy Now"}
-              </Button>
+                <Button
+                  fontSize="14px"
+                  border="1px solid"
+                  borderColor="#191919"
+                  rounded="8"
+                  _focus={{}}
+                  _hover={{}}
+                  h="30px"
+                  w="94%"
+                  variant="outline"
+                  onClick={() => addToCart(product)}
+                >
+                  {CheckInCart(cart, product) ? "In Cart" : "Buy Now"}
+                </Button>
               </Center>
             </Card>
           );

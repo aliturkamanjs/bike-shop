@@ -45,7 +45,7 @@ const ShopPage = (): JSX.Element => {
           >
             <option value="option2">Option 2</option>
             <option value="option3">Option 3</option>
-            
+
           </Select>
         </Flex>
         <Divider mt="8" mb="8" borderColor="#E3E3E3" />
@@ -110,6 +110,7 @@ const ShopPage = (): JSX.Element => {
                     onClick={() => addToCart(product)}
                   >
                     {CheckInCart(cart, product) ? "In Cart" : "Buy Now"}
+                    
                   </Button>
                 </Center>
               </Card>

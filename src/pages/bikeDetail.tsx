@@ -13,7 +13,6 @@ import startIcon from "../svg/start.svg";
 import { useCart, useCartAction } from "../providers/cartProvider";
 import { CheckInCart } from "../utils/checkInCart";
 
-
 const BikeDetail = (history: any): JSX.Element => {
   const { state } = history.location;
   const { cart } = useCart();

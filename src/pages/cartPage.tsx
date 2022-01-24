@@ -58,7 +58,11 @@ const CartPage = (): JSX.Element => {
                       alignItems="center"
                       justifyContent="center"
                     >
-                      <Image w={["200px","200px","220px","160px","160px"]} src={c.image} objectFit="cover" />
+                      <Image
+                        w={["200px", "200px", "220px", "160px", "160px"]}
+                        src={c.image}
+                        objectFit="cover"
+                      />
                     </Flex>
                     <Flex
                       w="full"
@@ -82,7 +86,13 @@ const CartPage = (): JSX.Element => {
                             mt="-1"
                             fontSize="13px"
                             w="500px"
-                            display={["none","none","block","block","block"]}
+                            display={[
+                              "none",
+                              "none",
+                              "block",
+                              "block",
+                              "block",
+                            ]}
                           >
                             {c.desc.slice(0, 140)}
                           </Text>
@@ -159,7 +169,6 @@ const CartPage = (): JSX.Element => {
                   </Flex>
                 );
               })
-
             ) : (
               <Flex mt="20" w="full" alignItems="center" flexDir="column">
                 <Text fontSize="36px" fontWeight="700">
@@ -191,8 +200,6 @@ const CartPage = (): JSX.Element => {
 
 export default CartPage;
 
-
-
 export function CartSummery() {
   const { cart, total } = useCart();
 
@@ -210,12 +217,12 @@ export function CartSummery() {
       mt="10"
       bg="#f8fafd"
       rounded="14px"
-      w={["full","full","400px","400px","400px"]}
+      w={["full", "full", "400px", "400px", "400px"]}
       h="260px"
       shadow="sm"
     >
       <Text fontSize="21px" fontWeight="500">
-        order summery 
+        order summery
       </Text>
       <Divider mt="3" mb="3" borderColor="#E3E3E3" />
       <Flex w="full" justifyContent="space-between" color="#4B4B4B">
