@@ -93,13 +93,21 @@ const HomeBody = (): JSX.Element => {
       >
         New Bikes
       </Text>
-      <Flex justifyContent={["center","center","space-between","space-between","space-between"]} flexWrap="wrap">
+      <Flex
+        justifyContent={[
+          "center",
+          "center",
+          "space-between",
+          "space-between",
+          "space-between",
+        ]}
+        flexWrap="wrap"
+      >
         {products.slice(products.length - 2).map((product) => {
           return (
             <Card
-            mt="8"
+              mt="8"
               key={product.id}
-              flexDir="column"
               p="0"
               rounded="22px"
               w="365px"
@@ -137,6 +145,7 @@ const HomeBody = (): JSX.Element => {
                 </Link>
                 <Text>{product.price}</Text>
               </Flex>
+              <Center>
               <Button
                 fontSize="14px"
                 border="1px solid"
@@ -145,12 +154,13 @@ const HomeBody = (): JSX.Element => {
                 _focus={{}}
                 _hover={{}}
                 h="30px"
-                w="full"
+                w="94%"
                 variant="outline"
                 onClick={() => addToCart(product)}
               >
                 {CheckInCart(cart, product) ? "In Cart" : "Buy Now"}
               </Button>
+              </Center>
             </Card>
           );
         })}

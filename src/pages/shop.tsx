@@ -27,16 +27,17 @@ const ShopPage = (): JSX.Element => {
   return (
     <Layout>
       <Container maxW="container.xl">
-        <Flex mt="10" w="full" justifyContent="space-between">
+        <Flex mt="10" w="full" justifyContent="space-between" >
           <Flex flexDir="column">
-            <Text fontSize="35px" fontWeight="600" color="#191919">
+            <Text fontSize={["27px","27px","35px","35px","35px"]} fontWeight="600" color="#191919">
               Find your favorite bike
             </Text>
-            <Text mt="-4px" color="#7E7E7E">
+            <Text fontSize={["14px","15px","17px","17px","17px"]} mt="-4px" color="#7E7E7E">
               The purpose of lorem ipsum is to create a natural looking
             </Text>
           </Flex>
           <Select
+          display={["none", "none", "block", "block", "block"]}
             w="230px"
             h="30px"
             fontSize="15px"
@@ -47,7 +48,7 @@ const ShopPage = (): JSX.Element => {
           </Select>
         </Flex>
         <Divider mt="8" mb="8" borderColor="#E3E3E3" />
-        <Flex justifyContent="space-between" flexWrap="wrap">
+        <Flex justifyContent={["center","center","center","center","space-between"]} flexWrap="wrap">
           {products.map((product) => {
             return (
               <Card
@@ -55,6 +56,7 @@ const ShopPage = (): JSX.Element => {
                 key={product.id}
                 flexDir="column"
                 p="0"
+                m="4"
                 rounded="22px"
                 w="365px"
                 h="365px"

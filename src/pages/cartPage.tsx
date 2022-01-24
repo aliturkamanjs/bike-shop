@@ -2,7 +2,6 @@ import { Button } from "@chakra-ui/button";
 import { Image } from "@chakra-ui/image";
 import { Container, Divider, Flex, Text } from "@chakra-ui/layout";
 import { Link } from "react-router-dom";
-import ButtonComp from "../common/buttonComp";
 import Card from "../common/card";
 import Layout from "../layout/layout";
 import { useCart, useCartAction } from "../providers/cartProvider";
@@ -25,8 +24,19 @@ const CartPage = (): JSX.Element => {
         <Text mt="8" fontSize="35px" fontWeight="600">
           Your Bikes
         </Text>
-        <Flex w="full" justifyContent="space-between">
-          <Flex flexDir="column" w="full">
+        <Flex
+          w="full"
+          justifyContent="space-between"
+          alignItems={["center", "center", "center", "center", "flex-start"]}
+          flexDir={[
+            "column-reverse",
+            "column-reverse",
+            "column-reverse",
+            "column-reverse",
+            "row",
+          ]}
+        >
+          <Flex flexDir="column" w="full" alignItems="center">
             {cart.length ? (
               cart.map((c: any) => {
                 return (
@@ -34,27 +44,34 @@ const CartPage = (): JSX.Element => {
                     key={c.id}
                     mt="10"
                     bg="#f8fafd"
+                    shadow="sm"
                     rounded="14px"
-                    w="900px"
-                    h="170px"
+                    w={["full", "full", "full", "900px", "900px"]}
+                    h={["370px", "370px", "370px", "170px", "170px"]}
+                    flexDir={["column", "column", "column", "row", "row"]}
                   >
                     <Flex
                       rounded="14"
                       bg={c.bg}
-                      w="340px"
-                      h="full"
+                      w={["full", "full", "full", "340px", "340px"]}
+                      h={["200px", "200px", "200px", "full", "full"]}
                       alignItems="center"
                       justifyContent="center"
                     >
-                      <Image w="160px" src={c.image} objectFit="cover" />
+                      <Image w={["200px","200px","220px","160px","160px"]} src={c.image} objectFit="cover" />
                     </Flex>
-                    <Flex w="full" justifyContent="space-between">
+                    <Flex
+                      w="full"
+                      justifyContent="space-between"
+                      h={["150px", "150px", "150px", "auto", "auto"]}
+                    >
                       <Flex
                         mb="2"
                         ml="4"
                         flexDir="column"
                         mt="2"
                         justifyContent="space-between"
+                        h={["full", "full", "full", "auto", "auto"]}
                       >
                         <Flex flexDir="column">
                           <Text fontSize="25px" fontWeight="600">
@@ -65,6 +82,7 @@ const CartPage = (): JSX.Element => {
                             mt="-1"
                             fontSize="13px"
                             w="500px"
+                            display={["none","none","block","block","block"]}
                           >
                             {c.desc.slice(0, 140)}
                           </Text>
@@ -96,7 +114,11 @@ const CartPage = (): JSX.Element => {
                               cursor="pointer"
                               onClick={() => handleDec(c)}
                             >
-                              <Text _selection={{bg: "transparent"}} fontWeight="md" fontSize="25px">
+                              <Text
+                                _selection={{ bg: "transparent" }}
+                                fontWeight="md"
+                                fontSize="25px"
+                              >
                                 -
                               </Text>
                             </Flex>
@@ -106,7 +128,11 @@ const CartPage = (): JSX.Element => {
                               justifyContent="center"
                               alignItems="center"
                             >
-                              <Text _selection={{bg: "transparent"}} fontWeight="md" fontSize="25px">
+                              <Text
+                                _selection={{ bg: "transparent" }}
+                                fontWeight="md"
+                                fontSize="25px"
+                              >
                                 {c.qty}
                               </Text>
                             </Flex>
@@ -118,7 +144,11 @@ const CartPage = (): JSX.Element => {
                               cursor="pointer"
                               onClick={() => handleInc(c)}
                             >
-                              <Text _selection={{bg: "transparent"}} fontWeight="md" fontSize="25px">
+                              <Text
+                                _selection={{ bg: "transparent" }}
+                                fontWeight="md"
+                                fontSize="25px"
+                              >
                                 +
                               </Text>
                             </Flex>
@@ -160,6 +190,8 @@ const CartPage = (): JSX.Element => {
 
 export default CartPage;
 
+
+
 export function CartSummery() {
   const { cart, total } = useCart();
 
@@ -172,12 +204,14 @@ export function CartSummery() {
       display={cart.length ? "flex" : "none"}
       flexDir="column"
       position="relative"
+      alignItems="center"
       p="4"
       mt="10"
       bg="#f8fafd"
       rounded="14px"
-      w="400px"
+      w={["full","full","400px","400px","400px"]}
       h="260px"
+      shadow="sm"
     >
       <Text fontSize="21px" fontWeight="500">
         order summery
