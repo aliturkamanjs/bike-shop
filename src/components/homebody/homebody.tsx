@@ -73,8 +73,8 @@ const HomeBody = (): JSX.Element => {
         {componyItems.map((item) => {
           return (
             <Text
+            key={item.id}
               fontSize={["13px", "14px", "18px", "18px", "18px"]}
-              key={item.id}
               fontWeight="700"
               color="#A6A6A6"
             >

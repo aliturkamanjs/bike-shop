@@ -8,11 +8,11 @@ import {
   Button,
   Center
 } from "@chakra-ui/react";
+import { useCartAction, useCart } from "../providers/cartProvider";
 import { Link } from "react-router-dom";
 import Card from "../common/card";
 import { products } from "../data/data";
 import Layout from "../layout/layout";
-import { useCartAction, useCart } from "../providers/cartProvider";
 import { CheckInCart } from "../utils/checkInCart";
 import { contextProps } from "../utils/dataInterface";
 
@@ -45,6 +45,7 @@ const ShopPage = (): JSX.Element => {
           >
             <option value="option2">Option 2</option>
             <option value="option3">Option 3</option>
+            
           </Select>
         </Flex>
         <Divider mt="8" mb="8" borderColor="#E3E3E3" />

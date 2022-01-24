@@ -13,14 +13,6 @@ import startIcon from "../svg/start.svg";
 import { useCart, useCartAction } from "../providers/cartProvider";
 import { CheckInCart } from "../utils/checkInCart";
 
-// interface ProductProps {
-//   name: string;
-//   price: string;
-//   desc: string;
-//   bg: string;
-//   image: any;
-//   id: number;
-// }
 
 const BikeDetail = (history: any): JSX.Element => {
   const { state } = history.location;
@@ -33,14 +25,16 @@ const BikeDetail = (history: any): JSX.Element => {
 
   return (
     <Layout>
-      <Container minH={["100vh","88vh","98vh","98vh","72vh"]} maxW="container.xl">
+      <Container
+        minH={["100vh", "88vh", "98vh", "98vh", "72vh"]}
+        maxW="container.xl"
+      >
         <Divider mt="6" mb="6" borderColor="#E3E3E3" />
         <Flex
           h="400px"
           pr={["1", "3", "4", "8", "0"]}
           pl={["1", "3", "4", "8", "0"]}
           flexDir={["column", "column", "column", "column", "row"]}
-
         >
           <Flex flex={1} flexDir="column">
             <Text fontSize="43px">{state.name}</Text>

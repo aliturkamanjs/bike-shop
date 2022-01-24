@@ -18,7 +18,6 @@ const addToCart = (state: any, action: any) => {
 };
 
 const decProduct = (state: any, action: any) => {
-  console.log(state);
   const updatedcart = [...state.cart];
   const updatedItemIndex = updatedcart.findIndex(
     (item) => item.id === action.payload.id

@@ -127,7 +127,7 @@ const FooterComp = (): JSX.Element => {
         >
           {items.map((item) => {
             return (
-              <Flex mt="8" ml={["20", "10", "0", "0", "0"]} flexDir="column">
+              <Flex key={item.id} mt="8" ml={["20", "10", "0", "0", "0"]} flexDir="column">
                 <Text fontSize="24px" fontWeight="700">
                   {item.title}
                 </Text>

@@ -117,7 +117,7 @@ const CartPage = (): JSX.Element => {
                               <Text
                                 _selection={{ bg: "transparent" }}
                                 fontWeight="md"
-                                fontSize="25px"
+                                fontSize="22px"
                               >
                                 -
                               </Text>
@@ -131,7 +131,7 @@ const CartPage = (): JSX.Element => {
                               <Text
                                 _selection={{ bg: "transparent" }}
                                 fontWeight="md"
-                                fontSize="25px"
+                                fontSize="22px"
                               >
                                 {c.qty}
                               </Text>
@@ -147,7 +147,7 @@ const CartPage = (): JSX.Element => {
                               <Text
                                 _selection={{ bg: "transparent" }}
                                 fontWeight="md"
-                                fontSize="25px"
+                                fontSize="22px"
                               >
                                 +
                               </Text>
@@ -159,6 +159,7 @@ const CartPage = (): JSX.Element => {
                   </Flex>
                 );
               })
+
             ) : (
               <Flex mt="20" w="full" alignItems="center" flexDir="column">
                 <Text fontSize="36px" fontWeight="700">
@@ -214,7 +215,7 @@ export function CartSummery() {
       shadow="sm"
     >
       <Text fontSize="21px" fontWeight="500">
-        order summery
+        order summery 
       </Text>
       <Divider mt="3" mb="3" borderColor="#E3E3E3" />
       <Flex w="full" justifyContent="space-between" color="#4B4B4B">
