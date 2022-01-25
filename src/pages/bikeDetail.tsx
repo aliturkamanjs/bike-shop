@@ -14,7 +14,7 @@ import { useCart, useCartAction } from "../providers/cartProvider";
 import { CheckInCart } from "../utils/checkInCart";
 
 const BikeDetail = (history: any): JSX.Element => {
-  
+
   const { state } = history.location;
   const { cart } = useCart();
   const dispatch = useCartAction();
@@ -22,6 +22,7 @@ const BikeDetail = (history: any): JSX.Element => {
   const addToCart = (state: any) => {
     dispatch({ type: "ADD_TO_CART", payload: state });
   };
+  
 
   return (
     <Layout>

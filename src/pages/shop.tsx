@@ -21,6 +21,7 @@ const ShopPage = (): JSX.Element => {
   const {cart} = useCart()
 
   const addToCart = (product: contextProps) => {
+    
     dispatch({ type: "ADD_TO_CART", payload: product });
   };
 
@@ -112,7 +113,7 @@ const ShopPage = (): JSX.Element => {
                     {CheckInCart(cart, product) ? "In Cart" : "Buy Now"}
                     
                   </Button>
-                  
+
                 </Center>
               </Card>
             );

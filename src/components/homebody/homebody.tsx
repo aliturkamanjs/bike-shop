@@ -30,6 +30,7 @@ const HomeBody = (): JSX.Element => {
   ];
 
   const blogItems = [
+    
     {
       title: "become champion",
       desc: "The passage experienced a surge in popularity during the 1960s when Letraset used it on  sheets,",
@@ -42,6 +43,7 @@ const HomeBody = (): JSX.Element => {
       icon: goldenCup,
       id: 2,
     },
+
     {
       title: "bike rider",
       desc: "From its medieval origins to the digital era, learn everything there is to know about the  lorem ipsum passage.",
@@ -72,7 +74,7 @@ const HomeBody = (): JSX.Element => {
       >
         {componyItems.map((item) => {
           return (
-            
+
             <Text
               key={item.id}
               fontSize={["13px", "14px", "18px", "18px", "18px"]}
