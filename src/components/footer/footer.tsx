@@ -161,6 +161,7 @@ const FooterComp = (): JSX.Element => {
           w={["90%", "90%", "95%", "98%", "98%"]}
           justifyContent="space-between"
         >
+          
           <Image
             display={["none", "none", "block", "block", "block"]}
             src={logo}

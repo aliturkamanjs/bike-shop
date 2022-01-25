@@ -72,6 +72,7 @@ const HomeBody = (): JSX.Element => {
       >
         {componyItems.map((item) => {
           return (
+            
             <Text
               key={item.id}
               fontSize={["13px", "14px", "18px", "18px", "18px"]}

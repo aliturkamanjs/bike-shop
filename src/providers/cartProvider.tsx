@@ -10,6 +10,7 @@ const initialState = {
 };
 
 const CartProvider = ({ children }: { children: ReactNode }) => {
+  
   const [cart, dispatch] = useReducer(CartReducer, initialState);
 
   return (

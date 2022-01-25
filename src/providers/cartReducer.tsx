@@ -1,4 +1,5 @@
 const addToCart = (state: any, action: any) => {
+  
   const updatedCart = [...state.cart];
   const updatedItemIndex = updatedCart.findIndex(
     (item) => item.id === action.payload.id

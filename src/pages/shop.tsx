@@ -112,6 +112,7 @@ const ShopPage = (): JSX.Element => {
                     {CheckInCart(cart, product) ? "In Cart" : "Buy Now"}
                     
                   </Button>
+                  
                 </Center>
               </Card>
             );

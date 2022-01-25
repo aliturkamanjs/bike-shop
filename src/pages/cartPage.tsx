@@ -7,6 +7,7 @@ import Layout from "../layout/layout";
 import { useCart, useCartAction } from "../providers/cartProvider";
 
 const CartPage = (): JSX.Element => {
+  
   const { cart } = useCart();
   const dispatch = useCartAction();
 
