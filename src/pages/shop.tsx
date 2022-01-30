@@ -6,7 +6,7 @@ import {
   Select,
   Text,
   Button,
-  Center
+  Center,
 } from "@chakra-ui/react";
 import { useCartAction, useCart } from "../providers/cartProvider";
 import { Link } from "react-router-dom";
@@ -18,27 +18,34 @@ import { contextProps } from "../utils/dataInterface";
 
 const ShopPage = (): JSX.Element => {
   const dispatch = useCartAction();
-  const {cart} = useCart()
+  const { cart } = useCart();
 
   const addToCart = (product: contextProps) => {
-    
     dispatch({ type: "ADD_TO_CART", payload: product });
   };
 
   return (
     <Layout>
       <Container maxW="container.xl">
-        <Flex mt="10" w="full" justifyContent="space-between" >
+        <Flex mt="10" w="full" justifyContent="space-between">
           <Flex flexDir="column">
-            <Text fontSize={["27px","27px","35px","35px","35px"]} fontWeight="600" color="#191919">
+            <Text
+              fontSize={["27px", "27px", "35px", "35px", "35px"]}
+              fontWeight="600"
+              color="#191919"
+            >
               Find your favorite bike
             </Text>
-            <Text fontSize={["14px","15px","17px","17px","17px"]} mt="-4px" color="#7E7E7E">
+            <Text
+              fontSize={["14px", "15px", "17px", "17px", "17px"]}
+              mt="-4px"
+              color="#7E7E7E"
+            >
               The purpose of lorem ipsum is to create a natural looking
             </Text>
           </Flex>
           <Select
-          display={["none", "none", "block", "block", "block"]}
+            display={["none", "none", "block", "block", "block"]}
             w="230px"
             h="30px"
             fontSize="15px"
@@ -46,11 +53,19 @@ const ShopPage = (): JSX.Element => {
           >
             <option value="option2">Option 2</option>
             <option value="option3">Option 3</option>
-
           </Select>
         </Flex>
         <Divider mt="8" mb="8" borderColor="#E3E3E3" />
-        <Flex justifyContent={["center","center","center","center","space-between"]} flexWrap="wrap">
+        <Flex
+          justifyContent={[
+            "center",
+            "center",
+            "center",
+            "center",
+            "space-between",
+          ]}
+          flexWrap="wrap"
+        >
           {products.map((product) => {
             return (
               <Card
@@ -73,7 +88,6 @@ const ShopPage = (): JSX.Element => {
                   alignItems="center"
                   bg={product.bg}
                 >
-                  
                   <Image w="270px" objectFit="cover" src={product.image} />
                 </Flex>
                 <Link to={{ pathname: `/bike/${product.id}`, state: product }}>
@@ -111,9 +125,7 @@ const ShopPage = (): JSX.Element => {
                     onClick={() => addToCart(product)}
                   >
                     {CheckInCart(cart, product) ? "In Cart" : "Buy Now"}
-                    
                   </Button>
-
                 </Center>
               </Card>
             );

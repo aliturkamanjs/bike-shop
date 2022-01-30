@@ -10,7 +10,6 @@ import instagram from "../../svg/instagram.svg";
 import github from "../../svg/github.svg";
 
 const FooterComp = (): JSX.Element => {
-  
   const items = [
     {
       title: "Company",
@@ -162,7 +161,6 @@ const FooterComp = (): JSX.Element => {
           w={["90%", "90%", "95%", "98%", "98%"]}
           justifyContent="space-between"
         >
-
           <Image
             display={["none", "none", "block", "block", "block"]}
             src={logo}
@@ -230,6 +228,7 @@ const FooterComp = (): JSX.Element => {
                 Ali Turkaman
               </Link>
             </Flex>
+            
           </Flex>
         </Flex>
       </Container>

@@ -7,7 +7,6 @@ const CartContextDispatcher = createContext<any | null>(null);
 const initialState = {
   cart: [],
   total: 0,
-
 };
 
 const CartProvider = ({ children }: { children: ReactNode }) => {
@@ -26,4 +25,3 @@ export default CartProvider;
 
 export const useCart = () => useContext(CartContext);
 export const useCartAction = () => useContext(CartContextDispatcher);
-

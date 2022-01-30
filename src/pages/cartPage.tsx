@@ -7,7 +7,6 @@ import Layout from "../layout/layout";
 import { useCart, useCartAction } from "../providers/cartProvider";
 
 const CartPage = (): JSX.Element => {
-
   const { cart } = useCart();
   const dispatch = useCartAction();
 
@@ -21,7 +20,6 @@ const CartPage = (): JSX.Element => {
 
   return (
     <Layout>
-      
       <Container minH="70vh" maxW="container.xl">
         <Text mt="8" fontSize="35px" fontWeight="600">
           Your Bikes

@@ -1,5 +1,4 @@
 const addToCart = (state: any, action: any) => {
-  
   const updatedCart = [...state.cart];
   const updatedItemIndex = updatedCart.findIndex(
     (item) => item.id === action.payload.id
@@ -57,4 +56,3 @@ const CartReducer = (state: any, action: any) => {
 };
 
 export default CartReducer;
-

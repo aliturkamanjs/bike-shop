@@ -18,7 +18,7 @@ const Header = (): JSX.Element => {
           ml="6"
           fontSize={["45px", "65px", "80px", "110px", "110px"]}
         >
-          change
+          change 
         </Text>
       </Flex>
       <Text

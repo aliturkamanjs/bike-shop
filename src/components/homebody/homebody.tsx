@@ -30,7 +30,6 @@ const HomeBody = (): JSX.Element => {
   ];
 
   const blogItems = [
-    
     {
       title: "become champion",
       desc: "The passage experienced a surge in popularity during the 1960s when Letraset used it on  sheets,",
@@ -74,7 +73,6 @@ const HomeBody = (): JSX.Element => {
       >
         {componyItems.map((item) => {
           return (
-
             <Text
               key={item.id}
               fontSize={["13px", "14px", "18px", "18px", "18px"]}

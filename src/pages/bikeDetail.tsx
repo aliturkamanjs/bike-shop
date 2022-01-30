@@ -101,6 +101,7 @@ const BikeDetail = (history: any): JSX.Element => {
             >
               <Image objectFit="cover" w="500px" src={state.image} />
             </Flex>
+            
           </Flex>
         </Flex>
       </Container>

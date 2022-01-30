@@ -3,6 +3,7 @@ import HomeBody from "../components/homebody/homebody";
 import Layout from "../layout/layout";
 
 const HomePage = (): JSX.Element => {
+  
   return (
     <Layout>
       <Header />
