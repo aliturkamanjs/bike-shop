@@ -1,5 +1,3 @@
-import { contextProps } from "./dataInterface";
-
-export const CheckInCart = (cart: any, product: any) => {
-  return cart.find((c: contextProps) => c.id === product.id);
+export const CheckInCart = (cart: ProductPorps, product: ProductPorps) => {
+  return cart.find((c: ProductPorps) => c.id === product.id);
 };

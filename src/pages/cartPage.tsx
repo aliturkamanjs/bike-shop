@@ -10,11 +10,11 @@ const CartPage = (): JSX.Element => {
   const { cart } = useCart();
   const dispatch = useCartAction();
 
-  const handleInc = (cartItem: any) => {
+  const handleInc = (cartItem: ProductPorps) => {
     dispatch({ type: "ADD_TO_CART", payload: cartItem });
   };
 
-  const handleDec = (cartItem: any) => {
+  const handleDec = (cartItem: ProductPorps) => {
     dispatch({ type: "DEC_PRODUCT", payload: cartItem });
   };
 

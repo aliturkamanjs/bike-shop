@@ -23,5 +23,5 @@ const CartProvider = ({ children }: { children: ReactNode }) => {
 
 export default CartProvider;
 
-export const useCart = () => useContext(CartContext);
+export const useCart = () => useContext<CartProps>(CartContext);
 export const useCartAction = () => useContext(CartContextDispatcher);

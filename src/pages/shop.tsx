@@ -14,13 +14,13 @@ import Card from "../common/card";
 import { products } from "../data/data";
 import Layout from "../layout/layout";
 import { CheckInCart } from "../utils/checkInCart";
-import { contextProps } from "../utils/dataInterface";
 
 const ShopPage = (): JSX.Element => {
   const dispatch = useCartAction();
   const { cart } = useCart();
 
-  const addToCart = (product: contextProps) => {
+
+  const addToCart: AddTodCartProps = (product) => {
     dispatch({ type: "ADD_TO_CART", payload: product });
   };
 

@@ -14,15 +14,14 @@ import { useCart, useCartAction } from "../providers/cartProvider";
 import { CheckInCart } from "../utils/checkInCart";
 
 const BikeDetail = (history: any): JSX.Element => {
-
   const { state } = history.location;
   const { cart } = useCart();
   const dispatch = useCartAction();
 
-  const addToCart = (state: any) => {
+
+  const addToCart: AddTodCartProps = (state) => {
     dispatch({ type: "ADD_TO_CART", payload: state });
   };
-  
 
   return (
     <Layout>
@@ -101,7 +100,6 @@ const BikeDetail = (history: any): JSX.Element => {
             >
               <Image objectFit="cover" w="500px" src={state.image} />
             </Flex>
-            
           </Flex>
         </Flex>
       </Container>

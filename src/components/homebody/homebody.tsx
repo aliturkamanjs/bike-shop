@@ -9,13 +9,12 @@ import mapIcon from "../../svg/map.svg";
 import goldenCup from "../../svg/goldenCup.svg";
 import bikerIcon from "../../svg/bikerIcon.svg";
 import { CheckInCart } from "../../utils/checkInCart";
-import { contextProps } from "../../utils/dataInterface";
 
 const HomeBody = (): JSX.Element => {
   const dispatch = useCartAction();
   const { cart } = useCart();
 
-  const addToCart = (product: contextProps) => {
+  const addToCart :AddTodCartProps = (product) => {
     dispatch({ type: "ADD_TO_CART", payload: product });
   };
 
