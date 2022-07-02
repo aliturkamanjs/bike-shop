@@ -1,26 +1,30 @@
-import { Button } from "@chakra-ui/button";
-import { Image } from "@chakra-ui/image";
-import { Container, Divider, Flex, Text } from "@chakra-ui/layout";
-import { Link } from "react-router-dom";
-import Card from "../common/card";
-import Layout from "../layout/layout";
-import { useCart, useCartAction } from "../providers/cartProvider";
+import { Button } from "@chakra-ui/button"
+import { Image } from "@chakra-ui/image"
+import { Container, Divider, Flex, Text } from "@chakra-ui/layout"
+import { Link } from "react-router-dom"
+import Card from "../common/card"
+import Layout from "../layout/layout"
+import { useCart, useCartAction } from "../providers/cartProvider"
 
 const CartPage = (): JSX.Element => {
-  const { cart } = useCart();
-  const dispatch = useCartAction();
+  const { cart } = useCart()
+  const dispatch = useCartAction()
 
   const handleInc = (cartItem: ProductPorps) => {
-    dispatch({ type: "ADD_TO_CART", payload: cartItem });
-  };
+    dispatch({ type: "ADD_TO_CART", payload: cartItem })
+  }
 
   const handleDec = (cartItem: ProductPorps) => {
-    dispatch({ type: "DEC_PRODUCT", payload: cartItem });
-  };
+    dispatch({ type: "DEC_PRODUCT", payload: cartItem })
+  }
 
   return (
     <Layout>
-      <Container minH="70vh" maxW="container.xl">
+      <Container
+        minH="70vh"
+        maxW="container.xl"
+        style={{ fontFamily: "ralewayBold" }}
+      >
         <Text mt="8" fontSize="35px" fontWeight="600">
           Your Bikes
         </Text>
@@ -93,11 +97,15 @@ const CartPage = (): JSX.Element => {
                               "block",
                               "block",
                             ]}
+                            style={{ fontFamily: "ralewayMedium" }}
                           >
                             {c.desc.slice(0, 140)}
                           </Text>
                         </Flex>
-                        <Flex flexDir="column">
+                        <Flex
+                          flexDir="column"
+                          style={{ fontFamily: "ralewayMedium" }}
+                        >
                           <Text fontSize="14px">Color : {c.color}</Text>
                           <Text fontSize="14px">Size : {c.size}</Text>
                         </Flex>
@@ -109,6 +117,7 @@ const CartPage = (): JSX.Element => {
                         flexDir="column"
                         alignItems="flex-end"
                         justifyContent="space-between"
+                        style={{ fontFamily: "ralewayMedium" }}
                       >
                         <Text>$ {c.price * c.qty}</Text>
                         <Flex alignItems="center">
@@ -167,10 +176,16 @@ const CartPage = (): JSX.Element => {
                       </Flex>
                     </Flex>
                   </Flex>
-                );
+                )
               })
             ) : (
-              <Flex mt="20" w="full" alignItems="center" flexDir="column">
+              <Flex
+                mt="20"
+                w="full"
+                alignItems="center"
+                flexDir="column"
+                style={{ fontFamily: "ralewayBold" }}
+              >
                 <Text fontSize="36px" fontWeight="700">
                   Your cart is empty !
                 </Text>
@@ -183,6 +198,7 @@ const CartPage = (): JSX.Element => {
                     mt="5"
                     _focus={{}}
                     w="140px"
+                    style={{ fontFamily: "ralewayRegular" }}
                   >
                     go back
                   </Button>
@@ -195,17 +211,17 @@ const CartPage = (): JSX.Element => {
         </Flex>
       </Container>
     </Layout>
-  );
-};
+  )
+}
 
-export default CartPage;
+export default CartPage
 
 export function CartSummery() {
-  const { cart, total } = useCart();
+  const { cart, total } = useCart()
 
   const totalPrice = cart.length
     ? cart.reduce((acc: any, curr: any) => acc + curr.qty * curr.price, 0)
-    : 0;
+    : 0
 
   return (
     <Card
@@ -220,21 +236,39 @@ export function CartSummery() {
       w={["full", "full", "400px", "400px", "400px"]}
       h="260px"
       shadow="sm"
+      style={{ fontFamily: "ralewayBold" }}
     >
       <Text fontSize="21px" fontWeight="500">
         order summery
       </Text>
       <Divider mt="3" mb="3" borderColor="#E3E3E3" />
-      <Flex w="full" justifyContent="space-between" color="#4B4B4B">
+      <Flex
+        w="full"
+        justifyContent="space-between"
+        color="#4B4B4B"
+        style={{ fontFamily: "ralewayMedium" }}
+      >
         <Text>original price</Text>
         <Text>$ {totalPrice}</Text>
       </Flex>
-      <Flex mt="3" w="full" justifyContent="space-between" color="#4B4B4B">
+      <Flex
+        mt="3"
+        w="full"
+        justifyContent="space-between"
+        color="#4B4B4B"
+        style={{ fontFamily: "ralewayMedium" }}
+      >
         <Text>cart discount</Text>
         <Text>$ {totalPrice - total}</Text>
       </Flex>
       <Divider mt="3" mb="3" borderColor="#E3E3E3" />
-      <Flex w="full" mb="3" justifyContent="space-between" color="#4B4B4B">
+      <Flex
+        w="full"
+        mb="3"
+        justifyContent="space-between"
+        color="#4B4B4B"
+        style={{ fontFamily: "ralewayMedium" }}
+      >
         <Text>total</Text>
         <Text>$ {total}</Text>
       </Flex>
@@ -250,9 +284,10 @@ export function CartSummery() {
         variant="outline"
         position="absolute"
         bottom="3"
+        style={{ fontFamily: "ralewayMedium" }}
       >
         Checkout
       </Button>
     </Card>
-  );
+  )
 }

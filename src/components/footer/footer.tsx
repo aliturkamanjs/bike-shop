@@ -1,13 +1,13 @@
-import { Center, Flex } from "@chakra-ui/react";
-import { Container, Link, Text } from "@chakra-ui/layout";
-import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
-import { Button } from "@chakra-ui/button";
-import { Image } from "@chakra-ui/image";
-import logo from "../../svg/logo.svg";
-import linkedin from "../../svg/linkedin.svg";
-import twitter from "../../svg/twitter.svg";
-import instagram from "../../svg/instagram.svg";
-import github from "../../svg/github.svg";
+import { Center, Flex } from "@chakra-ui/react"
+import { Container, Link, Text } from "@chakra-ui/layout"
+import { Input, InputGroup, InputRightElement } from "@chakra-ui/input"
+import { Button } from "@chakra-ui/button"
+import { Image } from "@chakra-ui/image"
+import logo from "../../svg/logo.svg"
+import linkedin from "../../svg/linkedin.svg"
+import twitter from "../../svg/twitter.svg"
+import instagram from "../../svg/instagram.svg"
+import github from "../../svg/github.svg"
 
 const FooterComp = (): JSX.Element => {
   const items = [
@@ -56,7 +56,7 @@ const FooterComp = (): JSX.Element => {
       five: "Jobs",
       id: 5,
     },
-  ];
+  ]
 
   return (
     <Flex
@@ -66,6 +66,7 @@ const FooterComp = (): JSX.Element => {
       bg="#f9fafd"
       position="relative"
       mt="200px"
+      style={{ fontFamily: "ralewayBold" }}
     >
       <Container
         maxW={[
@@ -94,7 +95,11 @@ const FooterComp = (): JSX.Element => {
               <Text fontSize="22px" color="#f8fafd" fontWeight="700">
                 Newsletter
               </Text>
-              <Text fontSize="15px" color="#DAE3FC">
+              <Text
+                fontSize="15px"
+                color="#DAE3FC"
+                style={{ fontFamily: "ralewayMedium" }}
+              >
                 Be the first one to know about discount, offers and events
               </Text>
             </Flex>
@@ -102,6 +107,7 @@ const FooterComp = (): JSX.Element => {
               w={["full", "60%", "370px", "370px", "370px"]}
               mr={["0", "0", "0", "8", "8"]}
               mt={["8px", "17px", "0px", "0px", "0px"]}
+              style={{ fontFamily: "ralewayMedium" }}
             >
               <Input
                 _placeholder={{ color: "#f8fafd", fontWeight: "200" }}
@@ -132,6 +138,7 @@ const FooterComp = (): JSX.Element => {
                 mt="8"
                 ml={["20", "10", "0", "0", "0"]}
                 flexDir="column"
+                style={{ fontFamily: "ralewayMedium" }}
               >
                 <Text fontSize="24px" fontWeight="700">
                   {item.title}
@@ -152,7 +159,7 @@ const FooterComp = (): JSX.Element => {
                   {item.five}
                 </Text>
               </Flex>
-            );
+            )
           })}
         </Flex>
         <Flex
@@ -160,6 +167,7 @@ const FooterComp = (): JSX.Element => {
           bottom={["-10", "-10", "3", "4", "4"]}
           w={["90%", "90%", "95%", "98%", "98%"]}
           justifyContent="space-between"
+          style={{ fontFamily: "ralewayBold" }}
         >
           <Image
             display={["none", "none", "block", "block", "block"]}
@@ -228,12 +236,11 @@ const FooterComp = (): JSX.Element => {
                 Ali Turkaman
               </Link>
             </Flex>
-            
           </Flex>
         </Flex>
       </Container>
     </Flex>
-  );
-};
+  )
+}
 
-export default FooterComp;
+export default FooterComp

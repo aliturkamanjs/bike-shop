@@ -1,7 +1,7 @@
-import { Image } from "@chakra-ui/image";
-import { Flex, Text } from "@chakra-ui/layout";
-import bikeHeader from "../../svg/bike.svg";
-import arrowDown from "../../svg/arrowDown.svg";
+import { Image } from "@chakra-ui/image"
+import { Flex, Text } from "@chakra-ui/layout"
+import bikeHeader from "../../svg/bike.svg"
+import arrowDown from "../../svg/arrowDown.svg"
 
 const Header = (): JSX.Element => {
   return (
@@ -11,6 +11,7 @@ const Header = (): JSX.Element => {
         color="#151515"
         fontWeight="bold"
         fontSize="110px"
+        style={{ fontFamily: "ralewayBold" }}
       >
         <Text fontSize={["45px", "65px", "80px", "110px", "110px"]}>we</Text>{" "}
         <Text
@@ -18,7 +19,7 @@ const Header = (): JSX.Element => {
           ml="6"
           fontSize={["45px", "65px", "80px", "110px", "110px"]}
         >
-          change 
+          change
         </Text>
       </Flex>
       <Text
@@ -26,6 +27,7 @@ const Header = (): JSX.Element => {
         color="#151515"
         fontWeight="bold"
         fontSize={["45px", "65px", "85px", "120px", "120px"]}
+        style={{ fontFamily: "ralewayBold" }}
       >
         perceptions
       </Text>
@@ -39,7 +41,7 @@ const Header = (): JSX.Element => {
         src={arrowDown}
       />
     </Flex>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

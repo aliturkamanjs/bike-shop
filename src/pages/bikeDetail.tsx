@@ -1,33 +1,26 @@
-import {
-  Button,
-  Container,
-  Divider,
-  Flex,
-  Image,
-  Text,
-} from "@chakra-ui/react";
-import freeShipping from "../svg/freeShipping.svg";
-import box from "../svg/box.svg";
-import Layout from "../layout/layout";
-import startIcon from "../svg/start.svg";
-import { useCart, useCartAction } from "../providers/cartProvider";
-import { CheckInCart } from "../utils/checkInCart";
+import { Button, Container, Divider, Flex, Image, Text } from "@chakra-ui/react"
+import freeShipping from "../svg/freeShipping.svg"
+import box from "../svg/box.svg"
+import Layout from "../layout/layout"
+import startIcon from "../svg/start.svg"
+import { useCart, useCartAction } from "../providers/cartProvider"
+import { CheckInCart } from "../utils/checkInCart"
 
 const BikeDetail = (history: any): JSX.Element => {
-  const { state } = history.location;
-  const { cart } = useCart();
-  const dispatch = useCartAction();
-
+  const { state } = history.location
+  const { cart } = useCart()
+  const dispatch = useCartAction()
 
   const addToCart: AddTodCartProps = (state) => {
-    dispatch({ type: "ADD_TO_CART", payload: state });
-  };
+    dispatch({ type: "ADD_TO_CART", payload: state })
+  }
 
   return (
     <Layout>
       <Container
         minH={["100vh", "88vh", "98vh", "98vh", "72vh"]}
         maxW="container.xl"
+        style={{ fontFamily: "ralewayMedium" }}
       >
         <Divider mt="6" mb="6" borderColor="#E3E3E3" />
         <Flex
@@ -37,7 +30,9 @@ const BikeDetail = (history: any): JSX.Element => {
           flexDir={["column", "column", "column", "column", "row"]}
         >
           <Flex flex={1} flexDir="column">
-            <Text fontSize="43px">{state.name}</Text>
+            <Text fontSize="43px" style={{ fontFamily: "ralewayBold" }}>
+              {state.name}
+            </Text>
             <Text fontSize="16px" mt="-7px" color="#3E3E3E">
               {state.desc}
             </Text>
@@ -57,7 +52,7 @@ const BikeDetail = (history: any): JSX.Element => {
               variant="outline"
               onClick={() => addToCart(state)}
             >
-              {CheckInCart(cart, state) ? "In Cart" : "By Now"}
+              {CheckInCart(cart, state) ? "In Cart" : "Buy Now"}
             </Button>
             <Divider mt="4" mb="4" borderColor="#E3E3E3" />
             <Flex w="full" justifyContent="center">
@@ -104,7 +99,7 @@ const BikeDetail = (history: any): JSX.Element => {
         </Flex>
       </Container>
     </Layout>
-  );
-};
+  )
+}
 
-export default BikeDetail;
+export default BikeDetail

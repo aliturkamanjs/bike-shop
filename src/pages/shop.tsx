@@ -7,22 +7,21 @@ import {
   Text,
   Button,
   Center,
-} from "@chakra-ui/react";
-import { useCartAction, useCart } from "../providers/cartProvider";
-import { Link } from "react-router-dom";
-import Card from "../common/card";
-import { products } from "../data/data";
-import Layout from "../layout/layout";
-import { CheckInCart } from "../utils/checkInCart";
+} from "@chakra-ui/react"
+import { useCartAction, useCart } from "../providers/cartProvider"
+import { Link } from "react-router-dom"
+import Card from "../common/card"
+import { products } from "../data/data"
+import Layout from "../layout/layout"
+import { CheckInCart } from "../utils/checkInCart"
 
 const ShopPage = (): JSX.Element => {
-  const dispatch = useCartAction();
-  const { cart } = useCart();
-
+  const dispatch = useCartAction()
+  const { cart } = useCart()
 
   const addToCart: AddTodCartProps = (product) => {
-    dispatch({ type: "ADD_TO_CART", payload: product });
-  };
+    dispatch({ type: "ADD_TO_CART", payload: product })
+  }
 
   return (
     <Layout>
@@ -33,6 +32,7 @@ const ShopPage = (): JSX.Element => {
               fontSize={["27px", "27px", "35px", "35px", "35px"]}
               fontWeight="600"
               color="#191919"
+              style={{ fontFamily: "ralewayBold" }}
             >
               Find your favorite bike
             </Text>
@@ -40,6 +40,7 @@ const ShopPage = (): JSX.Element => {
               fontSize={["14px", "15px", "17px", "17px", "17px"]}
               mt="-4px"
               color="#7E7E7E"
+              style={{ fontFamily: "ralewayMedium" }}
             >
               The purpose of lorem ipsum is to create a natural looking
             </Text>
@@ -50,6 +51,7 @@ const ShopPage = (): JSX.Element => {
             h="30px"
             fontSize="15px"
             placeholder="Select option"
+            style={{ fontFamily: "ralewayMedium" }}
           >
             <option value="option2">Option 2</option>
             <option value="option3">Option 3</option>
@@ -78,6 +80,7 @@ const ShopPage = (): JSX.Element => {
                 w="365px"
                 h="365px"
                 boxShadow="sm"
+                style={{ fontFamily: "ralewayMedium" }}
               >
                 <Flex
                   w="full"
@@ -93,7 +96,11 @@ const ShopPage = (): JSX.Element => {
                 <Link to={{ pathname: `/bike/${product.id}`, state: product }}>
                   <Flex p="4" justifyContent="space-between">
                     <Flex flexDir="column">
-                      <Text fontWeight="700" fontSize="23px">
+                      <Text
+                        fontWeight="700"
+                        fontSize="23px"
+                        style={{ fontFamily: "ralewayBold" }}
+                      >
                         {product.name}
                       </Text>
                       <Text
@@ -128,12 +135,12 @@ const ShopPage = (): JSX.Element => {
                   </Button>
                 </Center>
               </Card>
-            );
+            )
           })}
         </Flex>
       </Container>
     </Layout>
-  );
-};
+  )
+}
 
-export default ShopPage;
+export default ShopPage
