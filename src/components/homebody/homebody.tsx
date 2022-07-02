@@ -1,22 +1,22 @@
-import { Button } from "@chakra-ui/button";
-import { Image } from "@chakra-ui/image";
-import { useCart, useCartAction } from "../../providers/cartProvider";
-import { Center, Container, Flex, Text } from "@chakra-ui/layout";
-import { products } from "../../data/data";
-import { Link } from "react-router-dom";
-import Card from "../../common/card";
-import mapIcon from "../../svg/map.svg";
-import goldenCup from "../../svg/goldenCup.svg";
-import bikerIcon from "../../svg/bikerIcon.svg";
-import { CheckInCart } from "../../utils/checkInCart";
+import { Button } from "@chakra-ui/button"
+import { Image } from "@chakra-ui/image"
+import { useCart, useCartAction } from "../../providers/cartProvider"
+import { Center, Container, Flex, Text } from "@chakra-ui/layout"
+import { products } from "../../data/data"
+import { Link } from "react-router-dom"
+import Card from "../../common/card"
+import mapIcon from "../../svg/map.svg"
+import goldenCup from "../../svg/goldenCup.svg"
+import bikerIcon from "../../svg/bikerIcon.svg"
+import { CheckInCart } from "../../utils/checkInCart"
 
 const HomeBody = (): JSX.Element => {
-  const dispatch = useCartAction();
-  const { cart } = useCart();
+  const dispatch = useCartAction()
+  const { cart } = useCart()
 
-  const addToCart :AddTodCartProps = (product) => {
-    dispatch({ type: "ADD_TO_CART", payload: product });
-  };
+  const addToCart: AddTodCartProps = (product) => {
+    dispatch({ type: "ADD_TO_CART", payload: product })
+  }
 
   const componyItems = [
     { name: "silverback", id: 1 },
@@ -26,7 +26,7 @@ const HomeBody = (): JSX.Element => {
     { name: "mavic", id: 5 },
     { name: "santa cruz", id: 6 },
     { name: "fox", id: 7 },
-  ];
+  ]
 
   const blogItems = [
     {
@@ -48,7 +48,7 @@ const HomeBody = (): JSX.Element => {
       icon: bikerIcon,
       id: 3,
     },
-  ];
+  ]
 
   return (
     <Container maxW="container.xl">
@@ -58,6 +58,7 @@ const HomeBody = (): JSX.Element => {
           fontSize={["15px", "15px", "18px", "18px", "18px"]}
           fontWeight="600"
           color="#A6A6A6"
+          style={{ fontFamily: "ralewayBold" }}
         >
           Over 2.000 + trusted partner around the world
         </Text>
@@ -69,6 +70,7 @@ const HomeBody = (): JSX.Element => {
         flexDir={["column", "row", "row", "row", "row"]}
         flexWrap="wrap"
         mt="10"
+        style={{ fontFamily: "ralewayBold" }}
       >
         {componyItems.map((item) => {
           return (
@@ -80,7 +82,7 @@ const HomeBody = (): JSX.Element => {
             >
               {item.name}
             </Text>
-          );
+          )
         })}
       </Flex>
 
@@ -90,6 +92,7 @@ const HomeBody = (): JSX.Element => {
         fontSize={["30px", "36px", "46px", "46px", "46px"]}
         mb="5"
         color="#191919"
+        style={{ fontFamily: "ralewayBold" }}
       >
         New Bikes
       </Text>
@@ -138,6 +141,7 @@ const HomeBody = (): JSX.Element => {
                       overflow="hidden"
                       whiteSpace="nowrap"
                       textOverflow="ellipsis"
+                      style={{ fontFamily: "ralewayMedium" }}
                     >
                       {product.desc}
                     </Text>
@@ -162,7 +166,7 @@ const HomeBody = (): JSX.Element => {
                 </Button>
               </Center>
             </Card>
-          );
+          )
         })}
         <Flex
           w="325px"
@@ -170,11 +174,17 @@ const HomeBody = (): JSX.Element => {
           flexDir="column"
           justifyContent="center"
           alignItems="center"
+          style={{ fontFamily: "ralewayBold" }}
         >
           <Text fontSize="30px" fontWeight="700">
             Want to see more?
           </Text>
-          <Text color="#7E7E7E" fontSize="15px" mt="-1">
+          <Text
+            color="#7E7E7E"
+            fontSize="15px"
+            mt="-1"
+            style={{ fontFamily: "ralewayMedium" }}
+          >
             Explore more of trending bikes
           </Text>
           <Link to="/shop">
@@ -188,6 +198,7 @@ const HomeBody = (): JSX.Element => {
               h="29px"
               mt="4"
               mb="8"
+              style={{ fontFamily: "ralewayRegular" }}
             >
               View all
             </Button>
@@ -200,6 +211,7 @@ const HomeBody = (): JSX.Element => {
         justifyContent="center"
         alignItems="center"
         mt="120px"
+        style={{ fontFamily: "ralewayMedium" }}
       >
         <Text
           textAlign="center"
@@ -226,6 +238,7 @@ const HomeBody = (): JSX.Element => {
         justifyContent="space-between"
         alignItems="center"
         flexDir={["column", "column", "column", "row", "row"]}
+        style={{ fontFamily: "ralewayMedium" }}
       >
         {blogItems.map((item) => {
           return (
@@ -265,11 +278,11 @@ const HomeBody = (): JSX.Element => {
                 learn more
               </Button>
             </Card>
-          );
+          )
         })}
       </Flex>
     </Container>
-  );
-};
+  )
+}
 
-export default HomeBody;
+export default HomeBody
